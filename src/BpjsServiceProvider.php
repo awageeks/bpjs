@@ -23,6 +23,9 @@ class BpjsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        include __DIR__.'/routes.php';
+        $this->publishes([
+            __DIR__.'/../config/bpjs.php' => config_path('bpjs.php'),
+        ], 'config');
+
     }
 }
