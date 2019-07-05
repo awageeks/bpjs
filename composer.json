@@ -1,0 +1,12 @@
+{
+    "name": "awageeks/bpjs",
+    "description": "BPJS",
+    "type": "library",
+    "authors": [
+        {
+            "name": "AWA Geeks",
+            "email": "awageeks@gmail.com"
+        }
+    ],
+    "require": {}
+}
