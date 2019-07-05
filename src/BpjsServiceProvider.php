@@ -2,9 +2,9 @@
 
 namespace Awageeks\Bpjs;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
-class BpjsServiceProvider extends ServiceProvider
+class BpjsServiceProvider extends BaseServiceProvider
 {
     /**
      * Register services.
@@ -13,7 +13,7 @@ class BpjsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->make('Awageeks\Bpjs\BpjsController');
+        //
     }
 
     /**
@@ -23,9 +23,13 @@ class BpjsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/../config/bpjs.php' => config_path('bpjs.php'),
-        ], 'config');
+        $configPath = __DIR__ . '/../config/bpjs.php';
+        $this->publishes([$configPath => config_path('bpjs.php')], 'config');
 
+        $this->app->bind('bpjs', function($app)
+        {
+            return new Bpjs();
+        });
+        $this->app->alias('bpjs', 'Awageeks\Bpjs\Bpjs');
     }
 }
