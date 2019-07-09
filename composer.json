@@ -8,6 +8,14 @@
             "email": "awageeks@gmail.com"
         }
     ],
+    "license": "mit",
     "minimum-stability": "dev",
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "Awageeks\\Bpjs\\": "src/"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "~6.0"
+    }
 }
