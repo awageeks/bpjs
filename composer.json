@@ -8,5 +8,6 @@
             "email": "awageeks@gmail.com"
         }
     ],
+    "minimum-stability": "dev",
     "require": {}
 }
