@@ -6,12 +6,44 @@
 class Bpjs {
 
     public $config;
+    public $signature;
+    public $authorization;
+    public $consId;
+    public $timeStamp;
+    public $secretKey;
+    public $username;
+    public $password;
+    public $appCode;
+    public $appUrl;
 
     /**
      *
      */
     public function __construct() {
         $this->setConfig();
+        $this->setSignature();
+        $this->setAuthorization();
+        $this->setConsId();
+        $this->setTimeStamp();
+        $this->setSecretKey();
+        $this->setUsername();
+        $this->setPassword();
+        $this->setAppCode();
+        $this->setAppUrl();
+    }
+
+    /**
+     *
+     */
+    public function get() {
+       return $this;
+    }
+
+    /**
+     *
+     */
+    public function setSignature() {
+        $this->signature = $this->getSignature();
     }
 
     /**
@@ -40,6 +72,13 @@ class Bpjs {
     /**
      *
      */
+    public function setAuthorization() {
+        $this->authorization = $this->getAuthorization();
+    }
+
+    /**
+     *
+     */
     public function getAuthorization() {
         $encodedAuth = base64_encode($this->getUsername() . ':' . $this->getPassword() . ':' . $this->getAppCode());
         return "Basic {$encodedAuth}";
@@ -62,8 +101,22 @@ class Bpjs {
     /**
      *
      */
+    public function setConsId() {
+        $this->consId = $this->getConsId();
+    }
+
+    /**
+     *
+     */
     public function getConsId() {
         return $this->getConfig()['cons_id'];
+    }
+
+    /**
+     *
+     */
+    public function setTimeStamp() {
+       $this->timeStamp = $this->getTimeStamp();
     }
 
     /**
@@ -79,8 +132,22 @@ class Bpjs {
     /**
      *
      */
+    public function setSecretKey() {
+       $this->secretkey = $this->getSecretKey();
+    }
+
+    /**
+     *
+     */
     public function getSecretKey() {
         return $this->getConfig()['secret_key'];
+    }
+
+    /**
+     *
+     */
+    public function setUsername() {
+       $this->username = $this->getUsername();
     }
 
     /**
@@ -93,6 +160,13 @@ class Bpjs {
     /**
      *
      */
+    public function setPassword() {
+       $this->password = $this->getPassword();
+    }
+
+    /**
+     *
+     */
     public function getPassword() {
         return $this->getConfig()['password'];
     }
@@ -100,8 +174,22 @@ class Bpjs {
     /**
      *
      */
+    public function setAppCode() {
+       $this->appCode = $this->getAppCode();
+    }
+
+    /**
+     *
+     */
     public function getAppCode() {
         return $this->getConfig()['app_code'];
+    }
+
+    /**
+     *
+     */
+    public function setAppUrl() {
+       $this->appUrl = $this->getAppUrl();
     }
 
     /**
