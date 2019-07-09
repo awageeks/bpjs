@@ -28,8 +28,8 @@ class BpjsServiceProvider extends BaseServiceProvider
 
         $this->app->bind('bpjs', function($app)
         {
-            return new Bpjs();
+            return new BpjsWrapper();
         });
-        $this->app->alias('bpjs', 'Awageeks\Bpjs\Bpjs');
+        $this->app->alias('bpjs', 'Awageeks\Bpjs\BpjsWrapper');
     }
 }
