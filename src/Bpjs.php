@@ -36,7 +36,7 @@ class Bpjs {
      *
      */
     public function get() {
-       return $this;
+        return $this;
     }
 
     /**
@@ -116,7 +116,7 @@ class Bpjs {
      *
      */
     public function setTimeStamp() {
-       $this->timeStamp = $this->getTimeStamp();
+        $this->timeStamp = $this->getTimeStamp();
     }
 
     /**
@@ -133,7 +133,7 @@ class Bpjs {
      *
      */
     public function setSecretKey() {
-       $this->secretkey = $this->getSecretKey();
+        $this->secretkey = $this->getSecretKey();
     }
 
     /**
@@ -147,7 +147,7 @@ class Bpjs {
      *
      */
     public function setUsername() {
-       $this->username = $this->getUsername();
+        $this->username = $this->getUsername();
     }
 
     /**
@@ -161,7 +161,7 @@ class Bpjs {
      *
      */
     public function setPassword() {
-       $this->password = $this->getPassword();
+        $this->password = $this->getPassword();
     }
 
     /**
@@ -175,7 +175,7 @@ class Bpjs {
      *
      */
     public function setAppCode() {
-       $this->appCode = $this->getAppCode();
+        $this->appCode = $this->getAppCode();
     }
 
     /**
@@ -189,7 +189,7 @@ class Bpjs {
      *
      */
     public function setAppUrl() {
-       $this->appUrl = $this->getAppUrl();
+        $this->appUrl = $this->getAppUrl();
     }
 
     /**
